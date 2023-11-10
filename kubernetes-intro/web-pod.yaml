@@ -6,11 +6,11 @@ metadata:
     app: web
 spec: # Описание Pod
   containers: # Описание контейнеров внутри Pod
-    - name: web   # Название контейнера
-      image: ruauka/kuberserver:latest # Образ из которого создается контейнер
-      volumeMounts:
-        - name: data
-          mountPath: /app/vol
+  - name: web   # Название контейнера
+    image: verloin/nginx-ubuntu-hw-01:0.1 # Образ из которого создается контейнер
+    volumeMounts:
+    - name: data
+        mountPath: /app/vol
   initContainers:
     - name: init-web
       image: busybox:1.31.0
