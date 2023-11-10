@@ -1,14 +1,14 @@
 # verloin_platform
 verloin Platform repository
 
-1.  kubernetes-intro  (описание работы)
-1.1     Имеется сервер на винде, там установлены virtualBox и vagrant
-1.2     Вагрантом поднята бубунта и настроено рабочее оружение.. установлен vscode, minikube, kubectl
-1.3     Minikube установлен с опцией --vm-driver=none так как внутри виртуалки
-1.3.1       В процесссе настройки пришлось устанавливать доп утилиты:  cri, conntrack, cri-dockerd (со службой и сокетом), containernetworking-plugins
-1.4     В результате всё норм работает, поды крутятся опыт мутится
+1.  kubernetes-intro  (описание работы)  
+1.1     Имеется сервер на винде, там установлены virtualBox и vagrant  
+1.2     Вагрантом поднята бубунта и настроено рабочее оружение.. установлен vscode, minikube, kubectl  
+1.3     Minikube установлен с опцией --vm-driver=none так как внутри виртуалки  
+1.3.1       В процесссе настройки пришлось устанавливать доп утилиты:  cri, conntrack, cri-dockerd (со службой и сокетом), containernetworking-plugins  
+1.4     В результате всё норм работает, поды крутятся опыт мутится  
 
-2.  Задание:  Разберитесь почему все pod в namespace kube-system восстановились после удаления. Укажите причину в описании PR.
+2.  Задание:  Разберитесь почему все pod в namespace kube-system восстановились после удаления. Укажите причину в описании PR.  
 
 Поды etcd, kube-apiserver, kube-controller-manager, kube-scheduler являются статическими подами, за их запуск отвечает kubelet. 
 Манифесты этих подов обычно находятся в директории /etc/kubernetes/manifests, при удалении этих подов kubelet автоматически их перезапустит.
